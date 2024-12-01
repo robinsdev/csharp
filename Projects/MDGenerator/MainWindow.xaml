@@ -5,8 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MDGenerator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+         Title="Markdown Generator" Height="450" Width="800" SizeChanged="Window_SizeChanged">
     <Grid>
-
+        <StackPanel Orientation="Vertical">
+            <GroupBox Header="Source Information" Margin="1" >
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Source Path:" HorizontalAlignment="Left"  VerticalAlignment="Top" Width="80"/>
+                        <TextBox x:Name="txtSelectedSourcePath" HorizontalAlignment="Left" Text="" Width="570" VerticalAlignment="Center"/>
+                        <Button x:Name="btnSelectSource" Content="..." Width="25" Margin="5" Click="btnSelectSource_Click" ></Button>
+                        <Button x:Name="btnMakePath" Content="Show datas" Margin="5" Click="btnMakePath_Click" ></Button>
+                    </StackPanel>
+                </StackPanel>
+            </GroupBox>
+            <RichTextBox x:Name="richtxtLog" VerticalScrollBarVisibility="Visible" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                <FlowDocument>
+                    <Paragraph FontSize="10pt" LineHeight="10" LineStackingStrategy="BlockLineHeight"/>
+                </FlowDocument>
+            </RichTextBox>
+        </StackPanel>
     </Grid>
 </Window>

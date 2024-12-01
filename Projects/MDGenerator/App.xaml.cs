@@ -9,6 +9,7 @@ namespace MDGenerator
     /// </summary>
     public partial class App : Application
     {
+        public static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
     }
 
 }
